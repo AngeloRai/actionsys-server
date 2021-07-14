@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "qwe789zxc",
     "database": "actionsys",
     "host": "127.0.0.1",
     "dialect": "mysql"

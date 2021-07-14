@@ -11,7 +11,7 @@ const uploadCloud = require("../config/cloudinary.config");
 router.post(
   "/image-upload", uploadCloud.single("image"),
   (req, res) => {
-    console.log(req);
+    
     if (!req.file) {
       return res.status(500).json({ msg: "No file uploaded" });
     }
@@ -21,7 +21,7 @@ router.post(
 
 //CREATE FUNCIONARIO
 router.post("/funcionario", async (req, res) => {
-  console.log(req.body);
+  
   const { 
     nome,
     email,
@@ -44,8 +44,7 @@ router.post("/funcionario", async (req, res) => {
         nivel,
         image_url 
     });
-
-    console.table(funcionario);
+    
     return res.json(funcionario);
   } catch (err) {
     console.log(err);
@@ -103,8 +102,7 @@ router.put("/funcionario/:id", async (req, res) => {
     funcionario.nivel = nivel
 
     await funcionario.save();
-
-    console.table(funcionario);
+   
     return res.json(funcionario);
   } catch (err) {
     console.log(err);
