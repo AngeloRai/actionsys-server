@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 
 const { sequelize } = require("./models");
-const PORT = process.env.PORT;
+
 const app = express();
 
 app.use(cors());
@@ -16,8 +16,8 @@ const funcionariosRouter = require("./routes/funcionarios.routes");
 app.use("/", funcionariosRouter);
 
 
-app.listen(process.env.PORT || PORT, async () => {
-  console.log(`server running on port ${PORT}`);
+app.listen(process.env.PORT, async () => {
+  console.log(`server running on port ${process.env.PORT}`);
   await sequelize.authenticate();
   console.log("Database connected ");
 });
